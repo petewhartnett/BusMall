@@ -1,0 +1,14 @@
+* {box-sizing:border-box}
+
+#all-images img{
+
+display: inline-block;
+width: 250px;
+height: 250px;
+margin:30px;
+}
+
+h2, h5, h4, ul, li{
+    display:inline-block;
+   margin-left:-110px;
+}
