@@ -6,9 +6,25 @@ display: inline-block;
 width: 250px;
 height: 250px;
 margin:30px;
+margin-right: 100px;
 }
 
 h2, h5, h4, ul, li{
     display:inline-block;
    margin-left:-110px;
+}
+
+
+
+h1{
+
+    font-family: 'Indie Flower';
+    font-size: 50px;
+    color:blue;
+}
+
+h2{
+    font-family: 'Indie Flower';
+    font-size: 30px;
+    color:red;
 }
