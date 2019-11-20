@@ -1,5 +1,5 @@
-var parentElem = document.getElementById('table-spot');
-var tableElement = addElement('table', parentElem);
+
+'use strict'
 
 function Product(name, imgURL, ) {
     this.name = name;
@@ -54,7 +54,7 @@ Product.prototype.increaseClickCounter = function () {
 //randomizes pictures
 addEventListener("click", function () {
 
-//resets shown counter for images after all have
+    //resets shown counter for images after all have
     for (var i = 0; i < products.length; i++) {
         if (workingImages.length >= 18) {
             products[i].shownCtr = 0;
@@ -79,7 +79,7 @@ addEventListener("click", function () {
         }
     }
 
-//image 1
+    //image 1
 
     var img1 = document.getElementById('left-image-img');
     var productimg1 = products[Math.floor(Math.random() * products.length)];
@@ -98,7 +98,7 @@ addEventListener("click", function () {
     name1.textContent = productimg1.name;
 
 
-//image 2
+    //image 2
 
 
     var img2 = document.getElementById('middle-image-img');
@@ -119,7 +119,7 @@ addEventListener("click", function () {
 
 
 
-//image 3 
+    //image 3 
 
     var img3 = document.getElementById('right-image-img');
 
