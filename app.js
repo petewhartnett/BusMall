@@ -10,7 +10,6 @@ function Product(name, imgURL, ) {
 
 }
 
-
 var rand = [];
 var products = [];
 
@@ -35,12 +34,7 @@ products[17] = new Product('pet-sweep', 'https://raw.githubusercontent.com/codef
 products[18] = new Product('Wine-Glass', 'https://raw.githubusercontent.com/codefellows/seattle-201d60/master/class-11/lab/assets/wine-glass.jpg');
 
 
-
-
-
 var voteCtr = 0;
-
-
 var overAllCount = 0;
 var workingImages = [];
 
@@ -49,17 +43,16 @@ Product.prototype.increaseClickCounter = function () {
     this.clickCtr++;
 }
 
-
-
 //randomizes pictures
 addEventListener("click", function () {
 
     //resets shown counter for images after all have
+    if (workingImages.length >= 18) {
     for (var i = 0; i < products.length; i++) {
-        if (workingImages.length >= 18) {
+            
             products[i].shownCtr = 0;
-
         }
+       workingImages = [];
     }
 
     //adds to the click counter
@@ -68,9 +61,7 @@ addEventListener("click", function () {
         if (event.target.src === products[i].imgURL) {
             products[i].clickCtr++;
             console.log(products[i].clickCtr, ' ', products[i].name);
-
         }
-
 
         if (event.target.src === products[i].imgURL) {
             ;
@@ -118,7 +109,6 @@ addEventListener("click", function () {
     name2.textContent = productImg2.name;
 
 
-
     //image 3 
 
     var img3 = document.getElementById('right-image-img');
@@ -161,7 +151,7 @@ addEventListener("click", function () {
 
                         [, products[0].shownCtr2, products[1].shownCtr2, products[2].shownCtr2, products[3].shownCtr2, products[4].shownCtr2, products[5].shownCtr2, products[6].shownCtr2, products[7].shownCtr2, products[8].shownCtr2, products[9].shownCtr2, products[10].shownCtr2, products[11].shownCtr2, products[12].shownCtr2, products[13].shownCtr2, products[14].shownCtr2, products[15].shownCtr2, products[16].shown, products[17].shownCtr2, products[18].shownCtr2,],
                     type: 'bar'
-
+                    
 
 
                 }]
@@ -172,6 +162,10 @@ addEventListener("click", function () {
         });
     }
 
+    if(overAllCount == 24){
+        addLocalStorage();
+    }
+   
 
 });
 
@@ -186,3 +180,14 @@ function addElement(tag, container, text) {
 
 
 
+
+function addLocalStorage(){
+var localData = JSON.stringify(products);
+localStorage.setItem('products', localData );
+var retrieved = localStorage.getItem('products',localData);
+JSON.parse(localData);
+console.log(localData);
+
+}
+
+addLocalStorage();
